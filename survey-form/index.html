@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+	      name="viewport">
+	<meta content="ie=edge" http-equiv="X-UA-Compatible">
+	<title>Shadow Slave Survey</title>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
+	<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+	<main class="form-wrapper">
+		<h1 id="title">Shadow Slave Survey</h1>
+		<p id="description">Aspirant Shadow Slaves, welcome to the nightmare spell.</p>
+		<form action="" id="survey-form">
+			<fieldset class="double-field">
+				<div>
+					<label for="name" id="name-label">Aspirant Name<sup class="required">*</sup></label>
+					<input id="name" placeholder="Enter your name" required type="text"/>
+				</div>
+				<div>
+					<label for="number" id="number-label">Age<sup class="required">*</sup></label>
+					<input id="number" max="99" min="13" placeholder="Years" required type="number"/>
+				</div>
+			</fieldset>
+			<fieldset>
+				<label for="email" id="email-label">Soul Email<sup class="required">*</sup></label>
+				<input id="email" placeholder="truename@soul.core" required type="email"/>
+				<label for="dropdown">What is your soul rank?<sup class="required">*</sup></label>
+				<select id="dropdown" name="soul-rank" required>
+					<option disabled selected value="">(Select)</option>
+					<option value="1">Dormant</option>
+					<option value="2">Awakened</option>
+					<option value="3">Ascended</option>
+					<option value="4">Transcended</option>
+					<option value="5">Supreme</option>
+					<option value="6">Sacred</option>
+					<option value="7">Divine</option>
+				</select>
+			</fieldset>
+			<fieldset>
+				<label>What class is a creature with 7 cores?<sup class="required">*</sup></label>
+				<div class="inline-list">
+					<label>
+						<input name="cores" required type="radio" value="beast"/> Beast
+					</label>
+					<label>
+						<input name="cores" type="radio" value="titan"/> Titan
+					</label>
+					<label>
+						<input name="cores" type="radio" value="monster"/> Monster
+					</label>
+					<label>
+						<input name="cores" type="radio" value="devil"/> Devil
+					</label>
+					<label>
+						<input name="cores" type="radio" value="tirant"/> Tirant
+					</label>
+					<label>
+						<input name="cores" type="radio" value="devil"/> Devil
+					</label>
+					<label>
+						<input name="cores" type="radio" value="terror"/> Terror
+					</label>
+				</div>
+
+			</fieldset>
+			<fieldset>
+				<label>Which of the characters below are dead?<sup class="required">*</sup></label>
+				<div class="inline-list">
+					<label><input name="dead" type="checkbox" value="belle"/> Belle</label>
+					<label><input name="dead" type="checkbox" value="dorn"/> Dorn</label>
+					<label><input name="dead" type="checkbox" value="quentin"/> Quentin</label>
+					<label><input name="dead" type="checkbox" value="samara"/> Samara</label>
+					<label><input name="dead" type="checkbox" value="kim"/> Kim</label>
+					<label><input name="dead" type="checkbox" value="luster"/> Luster</label>
+				</div>
+				<label for="opnion">Write your opnion about the Cassie betrayal<sup class="required">*</sup></label>
+				<textarea id="opnion" required>
+
+				</textarea>
+			</fieldset>
+			<button id="submit" type="submit">Submit</button>
+		</form>
+	</main>
+</body>
+</html>
