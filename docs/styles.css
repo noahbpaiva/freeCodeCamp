@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9.1rem;
+}
+
+body {
+    display: flex;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    background: #0A0016;
+    color: #fff;
+}
+
+
+main {
+    position: relative;
+    width: 80%;
+    left: 20%;
+    padding: 8rem;
+}
+
+aside {
+    width: 20%;
+    height: 100vh;
+    padding: 2rem 0;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+
+aside header a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+aside img {
+    width: 3.2rem;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: min(3.2rem, 10vw);
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: min(2.8rem, 8vw);
+}
+
+h3 {
+    font-size: min(2rem, 4.5vw);
+}
+
+h2 {
+    margin-top: 3rem;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+pre {
+    line-height: 1.2em;
+    background: #0A0021;
+    padding: 2rem !important;
+    border: 0 !important;
+    border-radius: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+code {
+    display: block;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: clip;
+}
+
+code::-webkit-scrollbar {
+    height: 1rem;
+}
+
+
+code::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+code::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+code::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+.navbar ul {
+    list-style: none;
+}
+
+.navbar li a {
+    display: block;
+    padding: 1rem 3rem;
+    font-weight: 600;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.main-section p, .main-section ul, .main-section ol, pre {
+    margin-bottom: 2rem;
+}
+
+.main-section ul, .main-section ol {
+    margin-left: 3rem;
+}
+
+.main-section ul li, .main-section ol li {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.main-section a {
+    color: #cccccc;
+    text-decoration: #cccccc underline;
+    transition: all 0.3s ease-in-out;
+}
+
+.main-section a:hover {
+    color: #fff;
+}
+
+.ref {
+    color: pink;
+    background-color: rgba(34, 118, 255, 0.35);
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.4rem;
+}
+
+.pln {
+    color: pink !important;
+}
+
+.kwd {
+    color: #ff00ff !important;
+}
+
+
+@media screen and (max-width: 1320px) {
+    aside {
+        width: 30%;
+    }
+
+    main {
+        width: 70%;
+        left: 30%;
+    }
+
+}
+
+
+@media screen and (max-width: 900px) {
+    body {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        height: 9.1rem;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        background-color: #0A0021;
+        overflow: visible;
+    }
+
+    main {
+        left: 0;
+        width: 100%;
+        padding: 2rem;
+    }
+
+    body:has(nav[class~="open"]) {
+        overflow: hidden;
+    }
+
+    aside:has(nav[class~="open"]) {
+        height: 100vh;
+        overflow-y: scroll;
+    }
+
+
+    .navbar header {
+        display: flex;
+        align-items: center;
+        padding: 0 2rem;
+        justify-content: space-between;
+    }
+
+    .navbar header a {
+        margin-bottom: 0;
+        width: fit-content;
+    }
+
+    .navbar ul {
+        display: none;
+    }
+
+
+    .menu-btn {
+        height: 2.4rem;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .menu-btn div {
+        width: 2.4rem;
+        position: relative;
+    }
+
+    .menu-btn div, .menu-btn div::before, .menu-btn div::after {
+        height: .4rem;
+        background-color: #f9f9f9;
+        transition: all 0.3s ease-in-out;
+    }
+
+
+    .menu-btn div::before,
+    .menu-btn div::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        display: block;
+    }
+
+    .menu-btn div::before {
+        top: -.8rem;
+    }
+
+    .menu-btn div::after {
+        bottom: -.8rem;
+    }
+
+    .menu-btn.close div::before {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+    .menu-btn.close div::after {
+        transform: rotate(45deg);
+        bottom: 0;
+    }
+
+    .menu-btn.close div {
+        background-color: transparent;
+    }
+
+    .navbar.open {
+        height: 100%;
+    }
+
+    .navbar.open ul {
+        height: 100%;
+        display: block;
+        margin-top: 2rem;
+    }
+
+    .navbar.open ul li {
+        margin-bottom: 1rem;
+    }
+}

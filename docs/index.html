@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="ie=edge" http-equiv="X-UA-Compatible">
+	<title>Dart Documentation Page</title>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
+
+	<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+	<aside>
+		<nav class="navbar" id="navbar">
+			<header>
+				<a href="#">
+					<img
+						alt="Dart Logo"
+						src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/dart-programming-language-icon.png">
+					<h1>Dart Docs</h1>
+				</a>
+				<div class="menu-btn">
+					<div></div>
+				</div>
+			</header>
+			<ul>
+				<li><a class="nav-link" href="#introduction">Introduction</a></li>
+				<li><a class="nav-link" href="#hello_world">Hello World</a></li>
+				<li><a class="nav-link" href="#variables">Variables</a></li>
+				<li><a class="nav-link" href="#data_types">Data Types</a></li>
+				<li><a class="nav-link" href="#if...else_statements">If...else Statements</a></li>
+				<li><a class="nav-link" href="#while_and_do...while_loops">While and do...while Loops</a></li>
+				<li><a class="nav-link" href="#functions">Functions</a></li>
+				<li><a class="nav-link" href="#lists_and_collections">Lists and Collections</a></li>
+				<li><a class="nav-link" href="#maps_and_sets">Maps and Sets</a></li>
+				<li><a class="nav-link" href="#classes_and_objects">Classes and Objects</a></li>
+				<li><a class="nav-link" href="#exception_handling">Exception Handling</a></li>
+				<li><a class="nav-link" href="#asynchronous_programming">Asynchronous Programming</a></li>
+				<li><a class="nav-link" href="#libraries_and_packages">Libraries and Packages</a></li>
+				<li><a class="nav-link" href="#reference">Reference</a></li>
+			</ul>
+		</nav>
+	</aside>
+	<main id="main-doc">
+		<section class="main-section" id="introduction">
+			<header><h2>Introduction</h2></header>
+			<div class="section-content">
+				<p>Dart is a modern, object-oriented programming language designed for building scalable, high-performance web
+					and mobile applications. This documentation provides an overview of key Dart concepts and features.</p>
+				<h3>Installation</h3>
+				<p>To begin programming in Dart, follow these steps for installation:</p>
+				<ol>
+					<li>Visit the Dart SDK website.</li>
+					<li>Download the Dart SDK based on your operating system (Windows, macOS, or Linux).</li>
+					<li>Follow the installation instructions provided for your specific platform.</li>
+				</ol>
+				<h3>IDEs and Editors</h3>
+				<p>Enhance your Dart development experience with integrated development environments (IDEs) or editors:</p>
+				<ul>
+					<li><strong>Visual Studio Code:</strong> Install the Dart and Flutter extensions for a feature-rich
+						experience.
+					</li>
+					<li><strong>Android Studio:</strong> Suitable for Flutter development with Dart support out of the box.</li>
+					<li><strong>IntelliJ IDEA:</strong> Offers a Dart plugin for comprehensive Dart development.</li>
+				</ul>
+				<h3>Using DartPad</h3>
+				<p>Experiment with Dart in a web-based environment using DartPad. No installation is needed; simply visit the
+					website, write your Dart code, and run it instantly.</p>
+				<h3>Dart Packages</h3>
+				<p>Explore and use Dart packages to extend functionality. <a href="https://pub.dev/" target="_blank">The Dart
+					Package Repository (pub.dev)</a> is a rich source
+					of Dart packages. Use the <span class="ref">pub</span> command-line tool to manage dependencies.</p>
+			</div>
+		</section>
+		<section class="main-section" id="hello_world">
+			<header><h2>Hello World</h2></header>
+			<div class="section-content">
+				<p>Once Dart is installed, create a simple "Hello, World!" program to verify your setup:</p>
+				<pre class="prettyprint">
+<code>
+void main() {
+	print('Hello, World!');
+}
+</code>
+				</pre>
+				<p>Save this file with a <span class="ref">.dart</span> extension (e.g., <span class="ref">hello.dart</span>).
+					Open a terminal, navigate to the file's directory,
+					and run:</p>
+				<pre class="prettyprint">
+<code>dart hello.dart</code>
+				</pre>
+				<p>The program prints <span class="ref">Hello, World!</span> to the console.</p>
+			</div>
+		</section>
+		<section class="main-section" id="variables">
+			<header><h2>Variables</h2></header>
+			<div class="section-content">
+				<p>A variable is a location in memory (storage area) to hold data. To indicate the storage area, each variable
+					should be given a unique name (identifier). Variable names are just the symbolic representation of a memory
+					location.</p>
+				<h3>Declaring Variables</h3>
+				<p>To declare a variable, use the built-in keyword <span class="ref">var</span>:</p>
+				<pre class="prettyprint">
+<code>var name = 'Bob';</code>
+				</pre>
+				<p>Here, <span class="ref">name</span> is a variable of type <span class="ref">String</span>. The type of
+					variable is inferred at compile time if not explicitly specified.</p>
+				<p>Alternatively, you can explicitly declare the type:</p>
+				<pre class="prettyprint">
+<code>String name = 'Bob';</code>
+				</pre>
+				<h3>Variable scope</h3>
+				<p>The scope of a variable determines its visibility. Dart supports lexical scope. Scopes can be nested. Labels
+					are the only exception to the lexical scope rule.</p>
+				<p>Dart supports the following types of variable scope:</p>
+				<ul>
+					<li><strong>Class-level variables:</strong> Variables declared outside methods, constructors or blocks are
+						class-level variables. These variables are visible throughout the class.
+					</li>
+					<li><strong>Local variables:</strong> Variables declared within methods, constructors or blocks are local
+						variables.
+					</li>
+					<li><strong>Formal parameters:</strong> Variables declared as formal parameters for methods, constructors or
+						lambda expressions are formal parameters.
+					</li>
+				</ul>
+
+				<pre class="prettyprint">
+<code>
+	void exampleFunction() {
+  String localVariable = 'Local';
+  print(localVariable);
+}
+
+// Uncommenting the next line would result in an error since localVariable is not accessible here.
+// print(localVariable);
+</code>
+				</pre>
+				<h3>Constants</h3>
+				<p>Constants are variables whose values cannot be changed. Dart supports two types of constants:</p>
+				<pre class="prettyprint">
+<code>
+const pi = 3.14;
+</code>
+				</pre>
+				<p>For more information, see <a href="https://dart.dev/guides/language/language-tour#variables" target="_blank">Variables</a>
+					in the Dart Language Tour.</p>
+			</div>
+		</section>
+		<section class="main-section" id="data_types">
+			<header><h2>Data Types</h2></header>
+			<div class="section-content">
+				<p>Dart is a statically typed language, which means that variables always have a specific type associated with
+					them. However, type annotations are optional because Dart can infer types. In addition, Dart supports generic
+					types, enabling the creation of classes and collections that are type-safe at compile time.</p>
+				<h3>Numbers</h3>
+				<p>Dart numbers come in two flavors: <span class="ref">int</span> and <span class="ref">double</span>. Dart
+					numbers are automatically converted from one type to another as necessary.</p>
+				<pre class="prettyprint">
+<code>
+int age = 10;
+double price = 5.99;
+</code>
+				</pre>
+				<h3>Strings</h3>
+				<p>Dart strings are sequences of UTF-16 code units. Strings are immutable.</p>
+				<pre class="prettyprint">
+<code>
+String name = 'Bob';
+String message = 'Hello, $name!';
+</code>
+				</pre>
+				<h3>Booleans</h3>
+				<p>Dart booleans represent true and false values and are used for conditional tests.</p>
+				<pre class="prettyprint">
+<code>
+bool isRaining = true;
+bool isSunny = false;
+</code>
+				</pre>
+				<h3>Lists</h3>
+				<p>Dart lists are ordered collections of objects. Lists can contain objects of different types.</p>
+				<pre class="prettyprint">
+<code>
+var list = [1, 2, 3];
+print(list[0]); // 1
+</code>
+				</pre>
+			</div>
+		</section>
+		<section class="main-section" id="if...else_statements">
+			<header><h2>if...else Statements</h2></header>
+			<div class="section-content">
+				<p>Use <span class="ref">if</span> statements to execute code only if a condition is true:</p>
+				<pre class="prettyprint">
+<code>
+if (isRaining) {
+	print('Bring an umbrella.');
+}
+</code>
+				</pre>
+				<p>Use <span class="ref">if</span>...<span class="ref">else</span> statements to execute code when a condition
+					is true, or to execute different code if the condition is false:</p>
+				<pre class="prettyprint">
+<code>
+if (isRaining) {
+	print('Bring an umbrella.');
+} else {
+	print('Wear sunscreen.');
+}
+</code>
+				</pre>
+				<p>Use <span class="ref">if</span>...<span class="ref">else if</span>...<span class="ref">else</span> statements
+					to specify a new condition to test, if the first condition is false:</p>
+				<pre class="prettyprint">
+<code>
+if (isRaining) {
+	print('Bring an umbrella.');
+} else if (isSnowing) {
+	print('Wear a coat.');
+} else {
+	print('Wear sunscreen.');
+}
+</code>
+				</pre>
+				<p>For more information, see <a href="https://dart.dev/guides/language/language-tour#if-and-else"
+				                                target="_blank">if
+					and else</a> in the Dart Language Tour.</p>
+			</div>
+		</section>
+		<section class="main-section" id="while_and_do...while_loops">
+			<header><h2>while and do...while Loops</h2></header>
+			<div class="section-content">
+				<p>
+					Execute code repeatedly as long as a condition is true using <span class="ref">while</span> loops:
+				</p>
+				<pre class="prettyprint">
+<code>
+while (isRaining) {
+	print('Keep your umbrella open.');
+}
+</code>
+				</pre>
+				<p>Execute code repeatedly until a condition becomes true using <span class="ref">do</span>...<span class="ref">while</span>
+					loops:</p>
+				<pre class="prettyprint">
+<code>
+do {
+	print('Keep your umbrella open.');
+} while (isRaining);
+</code>
+				</pre>
+				<p>For more information, see <a href="https://dart.dev/guides/language/language-tour#while-and-do-while"
+				                                target="_blank">while
+					and do-while</a> in the Dart Language Tour.</p>
+			</div>
+		</section>
+		<section class="main-section" id="functions">
+			<header><h2>Functions</h2></header>
+			<div class="section-content">
+				<p>Functions are reusable blocks of code that perform a task. Dart supports the following types of
+					functions:</p>
+				<ul>
+					<li><strong>Named functions:</strong> Functions that are explicitly named.</li>
+					<li><strong>Anonymous functions:</strong> Functions that are not explicitly named. Also known as lambda
+						expressions.
+					</li>
+					<li><strong>Methods:</strong> Functions that are defined inside classes.</li>
+				</ul>
+				<h3>Named Functions</h3>
+				<p>Use named functions to perform a task. For example, the following function prints a message to the
+					console:</p>
+				<pre class="prettyprint">
+<code>
+void printMessage() {
+	print('Hello!');
+}
+</code>
+				</pre>
+				<p>Call the function to execute the code inside it:</p>
+				<pre class="prettyprint">
+<code>
+printMessage();
+</code>
+				</pre>
+				<p>Functions can take parameters:</p>
+				<pre class="prettyprint">
+<code>
+void printMessage(String message) {
+	print(message);
+}
+</code>
+				</pre>
+				<p>Call the function and pass in an argument:</p>
+				<pre class="prettyprint">
+<code>
+printMessage('Hello!');
+</code>
+				</pre>
+				<p>Functions can return a value:</p>
+				<pre class="prettyprint">
+<code>
+int sum(int a, int b) {
+	return a + b;
+}
+</code>
+				</pre>
+				<p>Call the function and store the return value:</p>
+				<pre class="prettyprint">
+<code>
+int result = sum(1, 2);
+print(result); // 3
+</code>
+				</pre>
+				<h3>Anonymous Functions</h3>
+				<p>Use anonymous functions to pass a function as an argument to another function. For example, the following
+					function takes a function as an argument and calls that function:</p>
+				<pre class="prettyprint">
+<code>
+void printMessage(Function messageFunction) {
+	messageFunction();
+}
+</code>
+				</pre>
+				<p>Call the function and pass in an anonymous function as an argument:</p>
+				<pre class="prettyprint">
+<code>
+printMessage(() {
+	print('Hello!');
+});
+</code>
+				</pre>
+			</div>
+		</section>
+		<section class="main-section" id="lists_and_collections">
+			<header><h2>Lists and Collections</h2></header>
+			<div class="section-content">
+				<p>Dart lists are ordered collections of objects. Lists can contain objects of different types. Dart supports
+					the following types of lists:</p>
+				<ul>
+					<li><strong>Fixed-length lists:</strong> Lists with a fixed length.</li>
+					<li><strong>Growable lists:</strong> Lists with a variable length.</li>
+				</ul>
+				<h3>Fixed-length Lists</h3>
+				<p>Use a fixed-length list when you know the number of elements that the list will contain. For example, the
+					following code creates a fixed-length list with a length of two:</p>
+				<pre class="prettyprint">
+<code>
+var list = new List(2);
+list[0] = 'a';
+list[1] = 'b';
+print(list); // [a, b]
+</code>
+				</pre>
+				<p>Attempting to add more elements to the list results in an error:</p>
+				<pre class="prettyprint">
+<code>
+list[2] = 'c'; // Error: RangeError (index): Index out of range: index should be less than 2
+</code>
+				</pre>
+				<h3>Growable Lists</h3>
+				<p>Use a growable list when you don't know the number of elements that the list will contain. For example, the
+					following code creates a growable list:</p>
+				<pre class="prettyprint">
+<code>
+var list = ['a'];
+list.add('b');
+print(list); // [a, b]
+</code>
+				</pre>
+				<p>For more information, see <a href="https://dart.dev/guides/language/language-tour#lists" target="_blank">Lists</a>
+					in the Dart Language Tour.</p>
+			</div>
+		</section>
+		<section class="main-section" id="maps_and_sets">
+			<header><h2>Maps and Sets</h2></header>
+			<div class="section-content">
+				<p>Dart provides specialized syntax for creating and initializing maps and sets.</p>
+				<h3>Maps</h3>
+				<p>In general, a map is an object that associates keys and values. Both keys and values can be any type of
+					object. Each key occurs only once, but you can use the same value multiple times. </p>
+				<p>Here are a couple of simple Dart maps, created using map literals:</p>
+				<pre class="prettyprint">
+<code>
+var gifts = {
+  // Key:    Value
+  'first': 'partridge',
+  'second': 'turtledoves',
+  'fifth': 'golden rings'
+};
+
+var nobleGases = {
+  2: 'helium',
+  10: 'neon',
+  18: 'argon',
+};
+</code>
+				</pre>
+				<h3>Sets</h3>
+				<p>A set in Dart is an unordered collection of unique items. Dart support for sets is provided by set literals
+					and the Set type.</p>
+				<p>Here is a simple Dart set, created using a set literal:</p>
+				<pre class="prettyprint">
+<code>
+	var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
+</code>
+				</pre>
+				<p>For more information, see <a href="https://dart.dev/guides/language/language-tour#maps"
+				                                target="_blank">Maps</a>
+					and <a href="https://dart.dev/guides/language/language-tour#sets" target="_blank">Sets</a> in the Dart
+					Language Tour.</p>
+
+			</div>
+		</section>
+		<section class="main-section" id="classes_and_objects">
+			<header><h2>Classes and Objects</h2></header>
+			<div class="section-content">
+				<p>Dart is an object-oriented language with classes and mixin-based inheritance. Every object is an instance of
+					a class, and all classes except Null descend from Object. </p>
+				<pre class="prettyprint">
+<code>
+	class Person {
+  String name;
+  int age;
+
+  Person(this.name, this.age);
+
+  void celebrateBirthday() {
+    age++;
+    print('$name is now $age years old!');
+  }
+}
+
+void main() {
+  Person john = Person('John', 25);
+  john.celebrateBirthday();
+}
+</code>
+				</pre>
+
+			</div>
+		</section>
+		<section class="main-section" id="exception_handling">
+			<header><h2>Exception Handling</h2></header>
+			<div class="section-content">
+				<p>Dart provides try, catch, and finally blocks for handling exceptions. </p>
+				<pre class="prettyprint">
+<code>
+void divide(int a, int b) {
+  try {
+
+    print(a ~/ b);  // Integer division
+
+  } catch (e) {
+
+    print('Error: $e');
+
+  } finally {
+
+    print('Division operation complete.');
+
+  }
+}
+
+void main() {
+  divide(10, 2);
+  divide(5, 0);  // This will trigger the catch block.
+}
+</code>
+				</pre>
+				<p>For more information, see <a href="https://dart.dev/guides/language/language-tour#exceptions"
+				                                target="_blank">Exceptions</a> in the Dart Language Tour.</p>
+			</div>
+		</section>
+		<section class="main-section" id="asynchronous_programming">
+			<header><h2>Asynchronous Programming</h2></header>
+			<div class="section-content">
+				<p>Dart supports asynchronous programming using Future and async/await.</p>
+				<h3>Futures</h3>
+				<p>A Future object represents a potential value or error that will be available at some time in the future.
+					Receiving its value is known as resolving the Future. </p>
+				<pre class="prettyprint">
+<code>
+Future&lt;void&gt; fetchData() async {
+  print('Fetching data...');
+  await Future.delayed(Duration(seconds: 2));
+  print('Data fetched!');
+}
+</code>
+					</pre>
+				<h3>async/await</h3>
+				<p>Use the async and await keywords to write asynchronous code that looks similar to synchronous code. </p>
+				<pre class="prettyprint">
+<code>
+Future&lt;void&gt; fetchData() async {
+	print('Fetching data...');
+	await Future.delayed(Duration(seconds: 2));
+	print('Data fetched!');
+}
+</code>
+				</pre>
+
+			</div>
+		</section>
+		<section class="main-section" id="libraries_and_packages">
+			<header><h2>Libraries and Packages</h2></header>
+			<div class="section-content">
+				<p>A Dart library is a collection of code. Libraries can be reused and imported into other libraries. Dart
+					libraries begin with the <span class="ref">library</span> keyword, followed by the library name and a
+					semicolon. </p>
+				<pre class="prettyprint">
+<code>
+import 'dart:math';
+
+void main() {
+  print('Random number: ${Random().nextInt(10)}');
+}
+</code>
+				</pre>
+			</div>
+		</section>
+		<section class="main-section" id="reference">
+			<header><h2>Reference</h2></header>
+			<div class="section-content">
+				<p>For more information on Dart, refer to the following resources:</p>
+				<h3>Dart Documentation</h3>
+				<p>This overview provides a glimpse into Dart's extensive capabilities. For in-depth exploration, refer to the
+					official Dart Documentation, language tour, and API reference.</p>
+				<p>These resources offer detailed information on language features, standard libraries, and advanced topics.</p>
+
+				<h3>Community and Support</h3>
+				<p>Join the Dart community to get help, share your experience, and stay up to date on Dart news and events.</p>
+				<p>Now you're ready to embark on your Dart programming journey! Explore the language, build projects, and enjoy
+					the versatility Dart offers.</p>
+				<p><br/>Happy coding!</p>
+			</div>
+		</section>
+	</main>
+	<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+	<script>
+    const codeBlocks = document.querySelectorAll('code');
+    const preBlocks = document.querySelectorAll('pre');
+    const navbar = document.querySelector('#navbar');
+
+
+    codeBlocks.forEach((block) => {
+      block.innerHTML = block.innerHTML.trim();
+    });
+    preBlocks.forEach((block) => {
+      block.innerHTML = block.innerHTML.trim();
+    });
+
+
+    document.querySelector('.menu-btn').addEventListener('click', e => {
+      e.currentTarget.classList.toggle('close');
+      navbar.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.navbar ul a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navbar.getAttribute('class').includes('open'))
+          document.querySelector('.menu-btn').click();
+      });
+    });
+
+	</script>
+</body>
+</html>
