@@ -23,6 +23,8 @@ Conducted a survey about the webnovel "Shadow Slave".
 
 I've created a tribute page to the rapper NF, presenting a brief biography and his albums.
 
-### [Dart Documentation Page](https://https://github.com/noahbpaiva/freeCodeCamp/tree/main/docs-page)
+### [Dart Documentation Page](https://github.com/noahbpaiva/freeCodeCamp/tree/main/docs-page)
 
 I've created a documentation page for the Dart programming language with some code examples.
+
+### [Attack on Titan Landing Page](https://github.com/noahbpaiva/freeCodeCamp/tree/main/landing-page)
