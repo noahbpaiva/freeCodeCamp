@@ -28,3 +28,5 @@ I've created a tribute page to the rapper NF, presenting a brief biography and h
 I've created a documentation page for the Dart programming language with some code examples.
 
 ### [Attack on Titan Landing Page](https://github.com/noahbpaiva/freeCodeCamp/tree/main/landing-page)
+
+I've created a landing page inspired by the anime Attack on Titan.
