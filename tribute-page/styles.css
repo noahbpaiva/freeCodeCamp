@@ -212,6 +212,8 @@ footer p {
 
     .biography-picture img {
         clip-path: none;
+        margin: 0 auto;
+        border-radius: 20%;
     }
 
     .biography-content {
