@@ -1,0 +1,286 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --primary-color: #f3a712;
+    --secondary-color: #a4a4a4;
+    --dark-color: #25282B;
+    --font-color: #F9FAFF;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    background-color: var(--dark-color);
+    color: var(--font-color);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 10%;
+}
+
+header span {
+    font-size: 2rem;
+}
+
+header nav ul {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+#navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--dark-color);
+    border-bottom: .2rem solid var(--primary-color);
+}
+
+a {
+    color: var(--font-color);
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+section {
+    margin-top: 10rem;
+    padding: 2rem 10%;
+}
+
+h2 {
+    font-size: 4rem;
+    margin-bottom: 8rem;
+    text-align: center;
+    position: relative;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10rem;
+    height: .5rem;
+    background-color: var(--primary-color);
+}
+
+#welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.hero {
+    width: 50rem;
+}
+
+.hero span {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: 6.4rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    margin-top: 2rem;
+    font-size: 2rem;
+    line-height: 1.6;
+    color: var(--secondary-color);
+}
+
+.hero-links {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.hero-links a {
+    padding: .5rem 1.5rem;
+    border: .2rem solid transparent;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+    font-weight: bold;
+}
+
+.hero-links a:first-child {
+    background-color: var(--primary-color);
+    color: var(--font-color);
+}
+
+.hero-links a:first-child:hover {
+    filter: brightness(1.2);
+}
+
+
+.hero-links a:last-child {
+    border-color: var(--font-color);
+}
+
+.hero-links a:last-child:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    margin-top: 10rem;
+}
+
+.profile-pic {
+    width: 40rem;
+    height: 40rem;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+}
+
+.project-tile {
+    background-color: #373737;
+    border-radius: 1rem;
+    margin: 0 10rem;
+    display: flex;
+    height: 54rem;
+}
+
+.project-tile:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.project-tile > div {
+    flex: 1;
+}
+
+.project-info {
+    padding: 1rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-info h3 {
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+}
+
+.project-info p {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 3rem;
+}
+
+.project-info a {
+    padding: .5rem 1.5rem;
+    border: .3rem solid var(--font-color);
+    border-radius: 1rem;
+    transition: all .3s ease-in-out;
+    font-weight: bold;
+    width: fit-content;
+}
+
+.project-info a:hover {
+    border-color: var(--primary-color);
+}
+
+.project-pic {
+    overflow: hidden;
+}
+
+.project-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer {
+    padding: 2rem 10%;
+    text-align: center;
+    color: var(--font-color);
+}
+
+@media (max-width: 768px) {
+    header nav {
+        padding: 2rem 5%;
+    }
+
+    section {
+        padding: 2rem 5%;
+    }
+
+    #welcome-section {
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    .hero {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 4.8rem;
+    }
+
+    .hero-links {
+        justify-content: center;
+    }
+
+    .profile-pic {
+        width: 30rem;
+        height: 30rem;
+    }
+
+    .projects-container {
+        margin-top: 5rem;
+    }
+
+    .project-tile {
+        margin: 0 5%;
+        flex-direction: column;
+    }
+
+    .project-tile:nth-child(odd) {
+        flex-direction: column-reverse;
+    }
+
+
+    .project-info {
+        padding: 2.5rem;
+        align-items: center;
+    }
+}
+
+
+

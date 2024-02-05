@@ -30,3 +30,7 @@ I've created a documentation page for the Dart programming language with some co
 ### [Attack on Titan Landing Page](https://github.com/noahbpaiva/freeCodeCamp/tree/main/landing-page)
 
 I've created a landing page inspired by the anime Attack on Titan.
+
+### [Portfolio](https://github.com/noahbpaiva/freeCodeCamp/tree/main/portfolio)
+
+I've created a portfolio page to showcase fake projects.
